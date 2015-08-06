@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<title>mandJS</title>
+		<link rel="stylesheet" type="text/css" href="css/mand.css"></line>
+		<script src="js/mand.js"></script>
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	</head>
+	<body onload="init();">
+		<div id="page">
+			<table>
+				<tr>
+		            <td>
+		                <div class='canvasSection'>
+		                    <canvas id='canvas' width='800' height='600'>canvas setpixel</canvas>
+		                </div>
+		            </td> 
+		        </tr>
+			</table>
+			
+			<div class='controlSection'>
+				<table>
+					<tr>
+						<td>
+							<div id='buttonReset' class='controlButton'>Reset</div>
+						</td>
+						<td>
+							<div id='buttonScreenshot' class='controlButton mediumMarginRight'>
+		                        <a href="#" class="button" id="btn-download" download="jMand.png">Screenshot</a>
+		                    </div>
+						</td>
+						<td>
+							<div id='buttonZoomIn' class='controlButton'>Zoom In</div>
+						</td>
+						<td>
+							<div id='buttonZoomOut' class='controlButton'>Zoom Out</div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="4"></td>
+					</tr>
+				</table>
+				<div id='statsSection'></div>
+	       </div>
+	    </div>     
+		<script>
+			
+			function init()
+			{		
+				var mand = new Mand(
+					{ 
+				        canvas: "canvas",
+				        screenshot: "btn-download",
+				        statsSection: "statsSection",
+				        zoomIn : "buttonZoomIn",
+				        zoomOut: "buttonZoomOut",
+				        reset: "buttonReset"
+				    },
+					{ width: 2560, height: 1440, iterations: 2000 },
+				    {
+					    cMidPoint: { real: -1.4844683782958987,imaginary: 0.038790036849975486},
+					    cWidth: 2.44140625e-7
+					},
+				    2000
+				);
+			}
+			
+		</script>
+		
+	</body>
+</html>
